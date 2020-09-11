@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
 def runs_filter(cricket):
   # runs dictionary will store data of the form
   # {batsman name: [runs, balls]}
