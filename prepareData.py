@@ -1,5 +1,4 @@
 import pandas as pd
-import json
 import requests
 
 
@@ -19,7 +18,7 @@ def get_data(league_id, event_id):
         print(inning)
         page = 1
         while True:
-            url = "https://hsapi.espncricinfo.com/v1/pages/match/comments?lang=en&leagueId=" + str(leagueId) + \
+            url = "https://hsapi.espncricinfo.com/v1/pages/match/comments?lang=en&leagueId=" + str(league_id) + \
                   "&eventId=" + str(event_id) + "&period=" + str(inning) + "&page=" + str(page)
             response = requests.get(url)
             data = response.json()
@@ -30,6 +29,6 @@ def get_data(league_id, event_id):
             page = page + 1
 
     data_final = data_final.reset_index(drop=True)
-    data_final = data_final.to_csv(f"{leagueId}_{eventId}.csv")
+    data_final = data_final.to_csv(f"{league_id}_{event_id}.csv")
 
     return data_final
