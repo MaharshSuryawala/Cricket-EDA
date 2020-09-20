@@ -1,7 +1,6 @@
 import pandas as pd
 import requests
 
-
 # To get CSV file of a particular match
 def get_data(league_id, event_id):
     # Columns of the csv
